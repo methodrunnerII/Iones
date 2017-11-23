@@ -18,7 +18,6 @@ public class MenuScrollList extends MenuList {
 
   public MenuScrollList(int tx, int ty, int tw, int th) {
     super(tx, ty, tw, th);
-    menuObjects = new ArrayList<MenuObject>();
     scrollButtonSize = 8;
     scrollButton = new LabelButton("", w - scrollButtonSize, scrollButtonSize/2, scrollButtonSize, scrollButtonSize);
     margin = 2;
@@ -28,32 +27,13 @@ public class MenuScrollList extends MenuList {
   }
 
   public void eval() {
-    hov.pushMatrix();
-    hov.translate(x, y);
-//    evalScroll();
-    evalObjects();
-    hov.popMatrix();
-  }
-
-//  public void evalScroll() {
-//    scrollButton.eval();
-//    if (scrollButton.held) {
-//      scrollButton.x = w - scrollButtonSize;
-//      scrollButton.y += (hov.mouseY - hov.screenY(scrollButton.x + scrollButtonSize/2, scrollButton.y + scrollButtonSize/2))/iones.Iones.getScale();
-//      scrollButton.y = PApplet.constrain(scrollButton.y, scrollButton.h/2, h - scrollButton.h/2);
-//    }
-//    offset = PApplet.map(scrollButton.y, scrollButton.h/2, h - scrollButton.h/2, 0, PApplet.max(l-h, 0));
-//  }
-
-  public void evalObjects() {
-//    hov.pushMatrix();
-//    hov.translate(0, -offset);
-//    if (mouseOver) {
-//      for (int i = 0; i < menuObjects.size(); i++) {
-//        menuObjects.get(i).eval();
-//      }
-//    }
-//    hov.popMatrix();
+    if (Iones.getCurrent().heldLeft == this) {
+      scrollButton.x = w - scrollButtonSize;
+      scrollButton.y += (hov.mouseY - hov.screenY(scrollButton.x + scrollButtonSize/2, scrollButton.y + scrollButtonSize/2))/iones.Iones.getScale();
+      scrollButton.y = PApplet.constrain(scrollButton.y, scrollButton.h/2, h - scrollButton.h/2);
+    }
+    offset = PApplet.map(scrollButton.y, scrollButton.h/2, h - scrollButton.h/2, 0, PApplet.max(l-h, 0));
+    super.eval();
   }
 
   public void addObject(MenuObject o) {
@@ -79,8 +59,8 @@ public class MenuScrollList extends MenuList {
   public void resize(int tw, int th){
     w = tw;
     h = th;
-    for(int i = 0; i < menuObjects.size(); i++){
-      menuObjects.get(i).resize(w-scrollButtonSize-margin, menuObjects.get(i).y);
+    for(int i = 0; i < children.size(); i++){
+      children.get(i).resize(w-scrollButtonSize-margin, children.get(i).y);
     }
   }
   
@@ -98,8 +78,8 @@ public class MenuScrollList extends MenuList {
     displaySpace.clear();
     displaySpace.pushMatrix();
     displaySpace.translate(0, -offset);
-    for (int i = 0; i < menuObjects.size(); i++) {
-      menuObjects.get(i).display(displaySpace);
+    for (int i = 0; i < children.size(); i++) {
+      children.get(i).display(displaySpace);
     }
     displaySpace.popMatrix();
     displaySpace.endDraw();

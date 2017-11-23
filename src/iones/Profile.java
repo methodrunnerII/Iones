@@ -44,28 +44,23 @@ public class Profile {
         MARGIN = 2;
     }
 
-    IntDict selectColors(boolean mouseOver, boolean clicked, int type) {
-        IntDict c = new IntDict(3);
-
-        if (type == MENU) {
-            c.set("fill", MENUFILL);
-            c.set("stroke", MENUSTROKE);
-            c.set("text", BUTTONTEXT);
-
-        } else if (type == BUTTON) {
-            c.set("text", BUTTONTEXT);
-            c.set("stroke", BUTTONSTROKE);
-            if (mouseOver) {
-                if (clicked) {
-                    c.set("fill", BUTTONCLICK);
-                } else {
-                    c.set("fill", BUTTONHOVER);
-                }
+    void getButtonColors(IntDict c, boolean mouseOver, boolean clicked) {
+        c.set("text", BUTTONTEXT);
+        c.set("stroke", BUTTONSTROKE);
+        if (mouseOver) {
+            if (clicked) {
+                c.set("fill", BUTTONCLICK);
             } else {
-                c.set("fill", BUTTONFILL);
+                c.set("fill", BUTTONHOVER);
             }
+        } else {
+            c.set("fill", BUTTONFILL);
         }
+    }
 
-        return c;
+    void getMenuColors(IntDict c){
+        c.set("fill", MENUFILL);
+        c.set("stroke", MENUSTROKE);
+        c.set("text", BUTTONTEXT);
     }
 }

@@ -9,12 +9,6 @@ public class MenuBuffer {
         menus = new ArrayList();
     }
 
-    void eval(){
-        for(int i = menus.size()-1; i >= 0; i--){
-            menus.get(i).eval();
-        }
-    }
-
     MenuObject getMouseOver(){
         MenuObject m = null;
         for(int i = menus.size()-1; i >= 0; i--){
@@ -51,8 +45,9 @@ public class MenuBuffer {
     }
 
     void removeVolatile(){
-        for(Menu m : menus){
-            if(!Iones.getCurrent().isCurrent(m)){
+        for(int i = menus.size()-1; i >= 0; i--){
+            Menu m = menus.get(i);
+            if(m.isVolatile && !Iones.getCurrent().isCurrent(m)){
                 remove(m);
             }
         }

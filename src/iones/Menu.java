@@ -33,13 +33,14 @@ public class Menu extends MenuObject {
     }
 
     public void display(PGraphics pg) {
+        Iones.getProfile().getMenuColors(colors);
         pg.pushMatrix();
         pg.translate(x, y);
         if (background != null) {
             pg.image(background, 0, 0);
         } else {
-            pg.stroke(profile.MENUSTROKE);
-            pg.fill(profile.MENUFILL);
+            pg.stroke(colors.get("stroke"));
+            pg.fill(colors.get("fill"));
             pg.rectMode(PApplet.CORNER);
             pg.rect(0, 0, w, h);
         }

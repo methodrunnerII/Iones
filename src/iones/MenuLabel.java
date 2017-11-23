@@ -22,23 +22,17 @@ class MenuLabel extends MenuObject {
     }
 
     public void display(PGraphics p) {
+        Iones.getProfile().getButtonColors(colors, false, false);
         p.pushMatrix();
         p.translate(x, y);
-//        if (image == null) {
-//            p.stroke(1);
-//            p.fill(0.5f);
-//            if (mouseOver) {
-//                p.fill(0.15f, 1, 1);
-//                if (iones.Mouse.held) {
-//                    p.fill(1, 1, 1);
-//                }
-//            }
-//            p.rectMode(PApplet.CORNER);
-//            p.rect(0, 0, w, h);
-//        } else {
-//            p.image(image, x, y);
-//        }
-//        displayText(text, margin, margin, p);
+        if (image == null) {
+            p.stroke(colors.get("stroke"));
+            p.fill(colors.get("fill"));
+            p.rect(0, 0, w, h);
+        } else {
+            p.image(image, x, y);
+        }
+        p.text(text, Iones.getProfile().MARGIN, Iones.getProfile().MARGIN);
         p.popMatrix();
     }
 }

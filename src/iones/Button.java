@@ -9,18 +9,18 @@ public class Button extends MenuObject {
     super(tx, ty, tw, th);
   }
 
-  IntDict selectColors(){
+  void selectColors(){
     boolean mousedOver = Iones.getCurrent().getMousedOver() == this;
     boolean clicked =  Iones.getCurrent().getHeldLeft() == this || Iones.getCurrent().getHeldRight() == this;
-    return Iones.getProfile().selectColors(mousedOver, clicked, Iones.getProfile().BUTTON);
+    Iones.getProfile().getButtonColors(colors, mousedOver, clicked);
   }
 
   void display(PGraphics pg){
-    IntDict c = selectColors();
+    selectColors();
     pg.pushMatrix();
     pg.translate(x, y);
-    pg.fill(c.get("fill"));
-    pg.stroke(c.get("stroke"));
+    pg.fill(colors.get("fill"));
+    pg.stroke(colors.get("stroke"));
     pg.rect(0, 0, w, h);
     pg.popMatrix();
   }

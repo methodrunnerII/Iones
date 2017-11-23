@@ -5,6 +5,7 @@ import processing.core.PApplet;
 import java.util.ArrayList;
 
 import processing.core.PGraphics;
+import processing.data.IntDict;
 
 public class MenuObject {
     static PApplet hov;
@@ -24,11 +25,14 @@ public class MenuObject {
     int sx;  //Screen coordinates of the object
     int sy;
 
+    IntDict colors;
+
     Profile profile;
 
     public MenuObject(int tx, int ty, int tw, int th) {
         profile = new Profile();
         children = new ArrayList<MenuObject>();
+        colors = new IntDict(3);
 
         x = tx;
         y = ty;
@@ -38,16 +42,10 @@ public class MenuObject {
         ny = y + h + profile.MARGIN;
     }
 
-    void eval() {
-        hov.pushMatrix();
-        hov.translate(x, y);
-        for (int i = 0; i < children.size(); i++) {
-            children.get(i).eval();
+    void eval(){
+        for(MenuObject m : children){
+            m.eval();
         }
-        if(isMouseOver()){
-            Iones.getCurrent().setMousedOver(this);
-        }
-        hov.popMatrix();
     }
 
     MenuObject getMouseOver(){
@@ -78,7 +76,8 @@ public class MenuObject {
 
     MenuObject getClicked() {
         MenuObject m = null;
-
+        hov.pushMatrix();
+        hov.translate(x, y);
         if (isMouseOver()) {
 
             // Check all child objects first
@@ -95,6 +94,7 @@ public class MenuObject {
                 m = this;
             }
         }
+        hov.popMatrix();
 
         return m;
     }
@@ -155,12 +155,7 @@ public class MenuObject {
     }
 
     public void removeChild(MenuObject o) {
-        for (int i = 0; i < children.size(); i++) {
-            if (children.get(i) == o) {
-                children.remove(o);
-                return;
-            }
-        }
+        children.remove(o);
     }
 
     public void clearChildren() {

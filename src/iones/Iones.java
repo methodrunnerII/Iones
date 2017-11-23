@@ -5,7 +5,7 @@ import processing.core.PConstants;
 import processing.core.PGraphics;
 
 public class Iones {
-    static PApplet p;
+    static PApplet hov;
 
     static float scale;
 
@@ -16,10 +16,9 @@ public class Iones {
 
     public static void initialize(PApplet p, float scale){
         p.colorMode(PConstants.HSB, 1);
-        Iones.p = p;
+        Iones.hov = p;
         MenuObject.setPApplet(p);
         Profile.setPApplet(p);
-        Keyboard.setPApplet(p);
         setScale(scale);
 
         buffer = new MenuBuffer();
@@ -35,12 +34,22 @@ public class Iones {
     }
 
     public static void mousePressed(int type){
+        current.setClickedLeft(null);
+        current.setClickedRight(null);
+        current.setTextfield(null);
+
         MenuObject m = buffer.getClicked();
+
         if(m != null){
-            if(type == PApplet.LEFT){
+            if(type == PConstants.LEFT){
                 current.setClickedLeft(m);
-            } else if(type == PApplet.RIGHT){
+                if(m instanceof TextField){
+                    current.setTextfield((TextField) m);
+                }
+                m.onClickLeft();
+            } else if(type == PConstants.RIGHT){
                 current.setClickedRight(m);
+                m.onClickRight();
             }
         }
         buffer.removeVolatile();
@@ -49,6 +58,12 @@ public class Iones {
     public static void mouseReleased(int type){
         current.setHeldLeft(null);
         current.setHeldRight(null);
+    }
+
+    public static void keyPressed(int k){
+        if(current.getTextfield() != null){
+            current.getTextfield().onKeystroke(k);
+        }
     }
 
     public static void wrapup(){

@@ -1,10 +1,10 @@
 package iones;
 
-class MenuDropdown extends LabelButton{
+public class MenuDropdown extends LabelButton{
   MenuList list;
   Menu listMenu;
   
-  MenuDropdown(String name, int x, int y, int w, int h, MenuList tlist){
+  public MenuDropdown(String name, int x, int y, int w, int h, MenuList tlist){
     super(name + " v ", x, y, w, h);
     list = tlist;
     list.move(list.margin, list.margin);

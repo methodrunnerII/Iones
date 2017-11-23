@@ -27,6 +27,7 @@ public class TabbedMenu extends Menu{
         if(menus.size() == 1){
             setMenu(m);
         }
+        updateTabs();
     }
 
     public void updateTabs(){

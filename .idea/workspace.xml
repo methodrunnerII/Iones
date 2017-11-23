@@ -7,41 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="179a5ddf-cfd3-43b4-afa6-5e212f094215" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/iones/Bar.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/iones/TabbedMenu.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Iones/iones/ImageButton.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Iones/iones/Key.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Iones/iones/Keyboard.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/iones/ImageButton.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/iones/Key.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/iones/Keyboard.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/iones/MenuSwitch.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Iones_jar/Iones.jar" afterPath="$PROJECT_DIR$/out/artifacts/Iones_jar/Iones.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Iones/iones/Button.class" afterPath="$PROJECT_DIR$/out/production/Iones/iones/Button.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Iones/iones/CheckButton.class" afterPath="$PROJECT_DIR$/out/production/Iones/iones/CheckButton.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Iones/iones/Iones.class" afterPath="$PROJECT_DIR$/out/production/Iones/iones/Iones.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Iones/iones/LabelButton.class" afterPath="$PROJECT_DIR$/out/production/Iones/iones/LabelButton.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Iones/iones/Menu.class" afterPath="$PROJECT_DIR$/out/production/Iones/iones/Menu.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Iones/iones/MenuBuffer.class" afterPath="$PROJECT_DIR$/out/production/Iones/iones/MenuBuffer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Iones/iones/MenuDropdown.class" afterPath="$PROJECT_DIR$/out/production/Iones/iones/MenuDropdown.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Iones/iones/MenuObject.class" afterPath="$PROJECT_DIR$/out/production/Iones/iones/MenuObject.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Iones/iones/MenuSwitch.class" afterPath="$PROJECT_DIR$/out/production/Iones/iones/MenuSwitch.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Iones/iones/Profile.class" afterPath="$PROJECT_DIR$/out/production/Iones/iones/Profile.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Iones/iones/TextField.class" afterPath="$PROJECT_DIR$/out/production/Iones/iones/TextField.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/iones/Button.java" afterPath="$PROJECT_DIR$/src/iones/Button.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/iones/CheckButton.java" afterPath="$PROJECT_DIR$/src/iones/CheckButton.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/iones/Iones.java" afterPath="$PROJECT_DIR$/src/iones/Iones.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/iones/LabelButton.java" afterPath="$PROJECT_DIR$/src/iones/LabelButton.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/iones/Menu.java" afterPath="$PROJECT_DIR$/src/iones/Menu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/iones/MenuBuffer.java" afterPath="$PROJECT_DIR$/src/iones/MenuBuffer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/iones/MenuDropdown.java" afterPath="$PROJECT_DIR$/src/iones/MenuDropdown.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/iones/MenuLabel.java" afterPath="$PROJECT_DIR$/src/iones/MenuLabel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/iones/MenuList.java" afterPath="$PROJECT_DIR$/src/iones/MenuList.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/iones/MenuObject.java" afterPath="$PROJECT_DIR$/src/iones/MenuObject.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/iones/MenuScrollList.java" afterPath="$PROJECT_DIR$/src/iones/MenuScrollList.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/iones/Profile.java" afterPath="$PROJECT_DIR$/src/iones/Profile.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/iones/TextField.java" afterPath="$PROJECT_DIR$/src/iones/TextField.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/iones/TabbedMenu.java" afterPath="$PROJECT_DIR$/src/iones/TabbedMenu.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -122,8 +88,8 @@
       <file leaf-file-name="TabbedMenu.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/iones/TabbedMenu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-124">
-              <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+            <state relative-caret-position="191">
+              <caret line="29" column="21" lean-forward="false" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -734,8 +700,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/iones/TabbedMenu.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-124">
-          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+        <state relative-caret-position="191">
+          <caret line="29" column="21" lean-forward="false" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
           <folding />
         </state>
       </provider>

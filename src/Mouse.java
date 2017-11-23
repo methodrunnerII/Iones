@@ -15,22 +15,7 @@ public class Mouse{
     released = false;
   }
   
-  public static void mousePressed(){
-    clicked = true;
-    held = true;
-    clickFrame = hov.frameCount;
-    if(hov.mouseButton == hov.LEFT){
-      leftClicked = true;
-    } else if(hov.mouseButton == hov.RIGHT){
-      rightClicked = true;  
-    }
-  }
 
-  public static void mouseReleased(){
-    held = false;
-    released = true;
-    releaseFrame = hov.frameCount;
-  }
 
   public static void setPApplet(PApplet p){ hov = p; }
 }

@@ -29,7 +29,6 @@ public class MenuScrollList extends MenuList {
     hov.pushMatrix();
     hov.translate(x, y);
     evalScroll();
-    detectMouseOver();
     evalObjects();
     hov.popMatrix();
   }

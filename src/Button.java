@@ -17,7 +17,6 @@ class Button extends MenuObject {
   public void eval() {
     hov.pushMatrix();
     hov.translate(x, y);
-    detectMouseOver();
     hov.popMatrix();
     detectClick();
   }

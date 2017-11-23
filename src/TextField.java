@@ -45,10 +45,6 @@ public class TextField extends LabelButton{
     super.evalAlways();
     hov.pushMatrix();
     hov.translate(x, y);
-    detectMouseOver();
-    if(clickedOutside()){
-      active = false;
-    }
     if(clicked){
       active = true;
     }

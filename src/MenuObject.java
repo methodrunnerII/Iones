@@ -25,7 +25,6 @@ public class MenuObject {
   Profile profile;
 
   boolean mouseOver;
-  boolean isVolatile;  //when true, menuObject sets done = true when clicked outside
   
   public int margin;
   
@@ -41,7 +40,6 @@ public class MenuObject {
     ny = y + h + margin;
     children = new ArrayList<MenuObject>();
     outsideDelay = false;
-    isVolatile = false;
     
     profile = new Profile();
   }
@@ -65,17 +63,6 @@ public class MenuObject {
     hov.popMatrix();
   }
 
-  public boolean event(int type){
-    boolean hit = false;
-    for(MenuObject m : children){
-      hit = m.event(type);
-      if(hit){
-        break;
-      }
-    }
-    return hit;
-  }
-
   public void display() {
     display(hov.g);
   }
@@ -89,34 +76,32 @@ public class MenuObject {
     pg.popMatrix();
   }
 
-  public void detectMouseOver() {
-    if (hov.mouseX == PApplet.constrain(hov.mouseX, hov.screenX(0, 0), hov.screenX(w, 0)) && 
-    		hov.mouseY == PApplet.constrain(hov.mouseY, hov.screenY(0, 0), hov.screenY(0, h))) {
-      mouseOver = true;
-      Menu.menuHit = true;
-    } else {
-      mouseOver = false;
-    }
+  boolean isMouseOver(){
+    return  hov.mouseX == PApplet.constrain(hov.mouseX, hov.screenX(0, 0), hov.screenX(w, 0)) &&
+            hov.mouseY == PApplet.constrain(hov.mouseY, hov.screenY(0, 0), hov.screenY(0, h));
   }
 
-  public boolean clickedOutside() {
-    if(Mouse.clicked && !mouseOver){
-      return true;
-    }
-    return false;
-  }
-  
-    public boolean clickedOutsideDelay() {
-    if (Mouse.clicked && !mouseOver) {
-      if(outsideDelay == true){
-        outsideDelay = false;
-        return true;
+  MenuObject getClicked(int type) {
+    MenuObject m = null;
+
+    if (isMouseOver()) {
+
+      // Check all child objects first
+      for (MenuObject mo : children) {
+        m = mo.getClicked(type);
+
+        if(m != null){
+          break;
+        }
       }
-      outsideDelay = true;
-      return false;
-    } else {
-      return false;
+
+      //If no child objects were hit, check if it is on the current object
+      if(m == null && isMouseOver()){
+        m = this;
+      }
     }
+
+    return m;
   }
 
   public void move(int tx, int ty) {

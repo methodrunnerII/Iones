@@ -18,7 +18,6 @@ public class MenuList extends MenuObject {
   public void eval() {
     hov.pushMatrix();
     hov.translate(x, y);
-    detectMouseOver();
     if (mouseOver) {
       for (int i = 0; i < menuObjects.size(); i++) {
         menuObjects.get(i).eval();

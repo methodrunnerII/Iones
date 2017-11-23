@@ -13,12 +13,15 @@ public class MenuBuffer {
         }
     }
 
-    void getEvent(int type){
+    MenuObject getClicked(int type){
+        MenuObject m = null;
         for(int i = menus.size()-1; i >= 0; i--){
-            if(menus.get(i).event(type)){
-                return;
+            m = menus.get(i).getClicked(type);
+            if(m != null) {
+                break;
             }
         }
+        return m;
     }
 
     void add(Menu m){
@@ -28,6 +31,4 @@ public class MenuBuffer {
     void insert(Menu m, int i){
         menus.add(i, m);
     }
-
-    void
 }

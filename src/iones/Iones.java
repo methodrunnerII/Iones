@@ -7,23 +7,24 @@ import processing.core.PGraphics;
 public class Iones {
     static PApplet hov;
 
-    static float scale;
-
     static MenuBuffer buffer;
     static Current current;
 
     static Profile profile;
 
-    public static void initialize(PApplet p, float scale){
+    static boolean debugMode;
+
+    public static void initialize(PApplet p){
         p.colorMode(PConstants.HSB, 1);
         Iones.hov = p;
         MenuObject.setPApplet(p);
         Profile.setPApplet(p);
-        setScale(scale);
 
         buffer = new MenuBuffer();
         current = new Current();
         profile = new Profile();
+
+        debugMode = false;
     }
 
     public static void getMouseOver(){
@@ -38,8 +39,10 @@ public class Iones {
         current.setClickedRight(null);
         current.setTextfield(null);
 
-        MenuObject m = buffer.getClicked();
+        MenuObject m = current.getMousedOver();
 
+        PApplet.println("hover: " + m);
+        PApplet.println("mouse: " + type + ", " + PConstants.LEFT + " / " + PConstants.RIGHT);
         if(m != null){
             if(type == PConstants.LEFT){
                 current.setClickedLeft(m);
@@ -52,7 +55,12 @@ public class Iones {
                 m.onClickRight();
             }
         }
+        PApplet.println("clickedLeft: " + current.getClickedLeft());
         buffer.removeVolatile();
+
+        if(debugMode){
+            buffer.debugStuff();
+        }
     }
 
     public static void mouseReleased(int type){
@@ -67,27 +75,19 @@ public class Iones {
     }
 
     public static void wrapup(){
-        for(Menu m : buffer.menus){
+        for(int i = buffer.menus.size()-1; i >= 0; i--){
+            Menu m = buffer.menus.get(i);
             if(m.done){
                 buffer.remove(m);
             }
         }
 
-        current.setMousedOver(null);
         current.setClickedLeft(null);
         current.setClickedRight(null);
     }
 
     public static MenuBuffer getBuffer(){
         return buffer;
-    }
-
-    public static float getScale() {
-        return scale;
-    }
-
-    public static void setScale(float scale) {
-        Iones.scale = scale;
     }
 
     public static Current getCurrent(){
@@ -112,6 +112,10 @@ public class Iones {
 
     public static void displayText(String s, int x, int y, PGraphics pg){
         pg.text(s, x, y);
+    }
+
+    public static void setDebugMode(Boolean b){
+        debugMode = b;
     }
 }
 

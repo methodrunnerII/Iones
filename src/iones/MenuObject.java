@@ -16,10 +16,10 @@ public class MenuObject {
 
     public ArrayList<MenuObject> children;
 
-    public int x;
-    public int y;
-    public int w;
-    public int h;
+    int x;
+    int y;
+    int w;
+    int h;
     int nx;  //x coordinate of following object if placed next to this one
     int ny;  //y coordinate of following object if placed under this one
     int sx;  //Screen coordinates of the object
@@ -48,11 +48,26 @@ public class MenuObject {
         }
     }
 
+    void debugStuff(){
+        hov.pushMatrix();
+        hov.translate(x, y);
+            PApplet.println(this + ": " + x + " " + y + " " + w + " " + h);
+            PApplet.println("screen: " + hov.screenX(x, 0) + " " + hov.screenY(0, y) + " " +
+                                         hov.screenX(x + w, 0) + " " + hov.screenY(0, y + h));
+            PApplet.println();
+
+            for(MenuObject m : children){
+                m.debugStuff();
+            }
+        hov.popMatrix();
+    }
+
     MenuObject getMouseOver(){
         MenuObject m = null;
 
         hov.pushMatrix();
         hov.translate(x, y);
+
         if(isMouseOver()){
             for(MenuObject mo : children){
                 m = mo.getMouseOver();
@@ -178,5 +193,29 @@ public class MenuObject {
             children.get(i).display(pg);
         }
         pg.popMatrix();
+    }
+
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    public int getW() {
+        return w;
+    }
+
+    public int getH() {
+        return h;
+    }
+
+    public int getNX() {
+        return nx;
+    }
+
+    public int getNY() {
+        return ny;
     }
 }

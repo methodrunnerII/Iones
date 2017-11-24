@@ -32,6 +32,12 @@ public class MenuBuffer {
         return m;
     }
 
+    public void debugStuff(){
+        for(Menu m : menus){
+            m.debugStuff();
+        }
+    }
+
     public void add(Menu m){
         menus.add(m);
     }
@@ -42,6 +48,10 @@ public class MenuBuffer {
 
     public void remove(Menu m){
         menus.remove(m);
+    }
+
+    public void clear(){
+        menus.clear();
     }
 
     void removeVolatile(){

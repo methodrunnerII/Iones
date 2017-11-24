@@ -1,5 +1,7 @@
 package iones;
 
+import processing.core.PApplet;
+
 public class Bar extends MenuObject {
     int length;
 
@@ -13,16 +15,23 @@ public class Bar extends MenuObject {
         for(MenuObject m : children){
             length += m.w + Iones.getProfile().MARGIN;
         }
+        w = length;
     }
 
     public void addChild(MenuObject m){
         super.addChild(m);
-        m.resize(m.w, m.h);
+        m.resize(m.w, h - 2*Iones.getProfile().MARGIN);
         m.move(length, Iones.getProfile().MARGIN);
         updateLength();
     }
 
-    void display(){
+    public void clearChildren(){
+        super.clearChildren();
+        updateLength();
+    }
 
+    public void debugStuff(){
+        super.debugStuff();
+        PApplet.println("children: " + children.size());
     }
 }

@@ -12,10 +12,10 @@ public class MenuList extends MenuObject {
         updateLength();
     }
 
-    public void addObject(MenuObject o) {
+    public void addChild(MenuObject o) {
         o.move(margin, l);
         o.resize(w, o.h);
-        addChild(o);
+        super.addChild(o);
         fitToLength();
     }
 
@@ -30,7 +30,7 @@ public class MenuList extends MenuObject {
 
     public void fitToLength() {
         updateLength();
-        h = l;
+        resize(w, l);
     }
 
     public int getLength() {

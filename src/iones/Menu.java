@@ -50,6 +50,8 @@ public class Menu extends MenuObject {
         pg.popMatrix();
     }
 
+    public void setName(String s){ name = s; }
+
     public void setVolatile(boolean v){
         isVolatile = v;
     }

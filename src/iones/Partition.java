@@ -10,13 +10,12 @@ public class Partition extends MenuObject {
     public static final int HORIZONTAL = 0;
     public static final int VERTICAL = 1;
 
-    MenuObject parent;
-
     FloatList splitCoords;
     int direction;
 
-    Partition(MenuObject parent){
-        super(0, 0, parent.getW(), parent.getH());
+    public Partition(){
+        super(0, 0, 0, 0);
+        resize(parent.getW(), parent.getH());
         splitCoords = new FloatList();
         direction = HORIZONTAL;
     }

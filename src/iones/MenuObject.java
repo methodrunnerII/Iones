@@ -5,7 +5,6 @@ import processing.core.PApplet;
 import java.util.ArrayList;
 
 import processing.core.PGraphics;
-import processing.data.IntDict;
 
 public class MenuObject {
     static PApplet hov;
@@ -15,6 +14,7 @@ public class MenuObject {
     }
 
     public ArrayList<MenuObject> children;
+    MenuObject parent;
 
     int x;
     int y;
@@ -167,6 +167,7 @@ public class MenuObject {
 
     public void addChild(MenuObject o) {
         children.add(o);
+        o.setParent(this);
     }
 
     public void removeChild(MenuObject o) {
@@ -239,5 +240,13 @@ public class MenuObject {
 
     public int getNY() {
         return ny;
+    }
+
+    public MenuObject getParent() {
+        return parent;
+    }
+
+    public void setParent(MenuObject parent) {
+        this.parent = parent;
     }
 }

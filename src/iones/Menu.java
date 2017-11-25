@@ -19,10 +19,6 @@ public class Menu extends MenuObject {
         isVolatile = false;
     }
 
-    public void addChild(MenuObject m) {
-        children.add(m);
-    }
-
     public void reset() {
         for (int i = 0; i < children.size(); i++) {
             children.get(i).reset();

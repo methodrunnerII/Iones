@@ -5,9 +5,9 @@ public class DefaultProfile {
     public static Profile menu;
 
     public static void initialize(){
-        button = new Profile(0x262626ff, 0x4c4c4cff, 0xccccccff);
-        button.setColor(Profile.FILL, Profile.HOVER, 0x7f7f7fff);
-        button.setColor(Profile.FILL, Profile.CLICK, 0x4499ff);
-        menu = new Profile(0x666666ff, 0x333333ff, 0xccccccff);
+        button = new Profile(0xff262626, 0xff4c4c4c, 0xffcccccc);
+        button.setColor(Profile.FILL, Profile.HOVER, 0xff7f7f7f);
+        button.setColor(Profile.FILL, Profile.CLICK, 0xff4499ff);
+        menu = new Profile(0xff666666, 0xff333333, 0xffcccccc);
     }
 }

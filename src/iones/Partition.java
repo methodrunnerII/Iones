@@ -15,7 +15,6 @@ public class Partition extends MenuObject {
 
     public Partition(){
         super(0, 0, 0, 0);
-        resize(parent.getW(), parent.getH());
         splitCoords = new FloatList();
         direction = HORIZONTAL;
     }
@@ -47,14 +46,14 @@ public class Partition extends MenuObject {
                     x[i+1] = round(splitCoords.get(i)*getW() + profile.MARGIN);
                     w[i] = x[i+1] - x[i] - profile.MARGIN;
                 }
-                w[w.length] = getW() - x[x.length] - profile.MARGIN;
+                w[w.length-1] = getW() - x[x.length-1] - profile.MARGIN;
             } else {
                 y[0] = profile.MARGIN;
                 for(int i = 0; i < children.size()-1; i++){
                     y[i+1] = round(splitCoords.get(i)*getH() + profile.MARGIN);
                     h[i] = y[i+1] - y[i] - profile.MARGIN;
                 }
-                h[h.length] = getH() - y[y.length] - profile.MARGIN;
+                h[h.length-1] = getH() - y[y.length-1] - profile.MARGIN;
             }
 
             for(int i = 0; i < children.size(); i++){
@@ -65,10 +64,10 @@ public class Partition extends MenuObject {
     }
 
     public void splitEvenly(){
-        if(direction == HORIZONTAL){
-            for(int i = 0; i < splitCoords.size(); i++){
-                splitCoords.set(i, getW()*(i+1)/(splitCoords.size()+1));
-            }
+        splitCoords.clear();
+
+        for(int i = 0; i < children.size()-1; i++){
+            splitCoords.append(((float)i+1)/(children.size()));
         }
 
         updateChildren();
@@ -111,5 +110,10 @@ public class Partition extends MenuObject {
         for(MenuObject m : children){
             m.display(pg);
         }
+    }
+
+    public void setParent(MenuObject o){
+        super.setParent(o);
+        resize(parent.getW(), parent.getH());
     }
 }

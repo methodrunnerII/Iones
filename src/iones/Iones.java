@@ -17,6 +17,7 @@ public class Iones {
         Iones.hov = p;
         MenuObject.setPApplet(p);
         Profile.setPApplet(p);
+        DefaultProfile.initialize();
 
         buffer = new MenuBuffer();
         current = new Current();

@@ -27,9 +27,11 @@ public class Profile {
 
     Profile(int stroke, int fill, int text) {
         colors = new int[3][3];
-        colors[STROKE][0] = stroke;
-        colors[FILL][0] = fill;
-        colors[TEXT][0] = text;
+        for(int i = 0; i < 3; i++) {
+            colors[STROKE][i] = stroke;
+            colors[FILL][i] = fill;
+            colors[TEXT][i] = text;
+        }
 
         MARGIN = 2;
     }

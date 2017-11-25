@@ -186,6 +186,7 @@ public class MenuObject {
     public void setProfile(Profile p){
         profile = p;
     }
+    public Profile getProfile(){return profile;}
 
     void selectColors(){
         cfill = profile.getColor(Profile.FILL);

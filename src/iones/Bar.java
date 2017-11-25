@@ -7,21 +7,21 @@ public class Bar extends MenuObject {
 
     public Bar(int x, int y, int w, int h){
         super(x, y, w, h);
-        length = Iones.getProfile().MARGIN;
+        length = profile.MARGIN;
     }
 
     public void updateLength(){
-        length = Iones.getProfile().MARGIN;
+        length = profile.MARGIN;
         for(MenuObject m : children){
-            length += m.w + Iones.getProfile().MARGIN;
+            length += m.w + profile.MARGIN;
         }
         w = length;
     }
 
     public void addChild(MenuObject m){
         super.addChild(m);
-        m.resize(m.w, h - 2*Iones.getProfile().MARGIN);
-        m.move(length, Iones.getProfile().MARGIN);
+        m.resize(m.w, h - 2*profile.MARGIN);
+        m.move(length, profile.MARGIN);
         updateLength();
     }
 

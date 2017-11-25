@@ -10,8 +10,6 @@ public class Iones {
     static MenuBuffer buffer;
     static Current current;
 
-    static Profile profile;
-
     static boolean debugMode;
 
     public static void initialize(PApplet p){
@@ -22,7 +20,6 @@ public class Iones {
 
         buffer = new MenuBuffer();
         current = new Current();
-        profile = new Profile();
 
         debugMode = false;
     }
@@ -40,9 +37,6 @@ public class Iones {
         current.setTextfield(null);
 
         MenuObject m = current.getMousedOver();
-
-        PApplet.println("hover: " + m);
-        PApplet.println("mouse: " + type + ", " + PConstants.LEFT + " / " + PConstants.RIGHT);
         if(m != null){
             if(type == PConstants.LEFT){
                 current.setClickedLeft(m);
@@ -55,7 +49,6 @@ public class Iones {
                 m.onClickRight();
             }
         }
-        PApplet.println("clickedLeft: " + current.getClickedLeft());
         buffer.removeVolatile();
 
         if(debugMode){
@@ -92,10 +85,6 @@ public class Iones {
 
     public static Current getCurrent(){
         return current;
-    }
-
-    public static Profile getProfile(){
-        return profile;
     }
 
     public static void display(PGraphics pg){

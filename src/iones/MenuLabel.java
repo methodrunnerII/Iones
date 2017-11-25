@@ -22,17 +22,17 @@ class MenuLabel extends MenuObject {
     }
 
     public void display(PGraphics p) {
-        Iones.getProfile().getButtonColors(colors, false, false);
+        selectColors();
         p.pushMatrix();
         p.translate(x, y);
         if (image == null) {
-            p.stroke(colors.get("stroke"));
-            p.fill(colors.get("fill"));
+            p.stroke(cstroke);
+            p.fill(cfill);
             p.rect(0, 0, w, h);
         } else {
             p.image(image, x, y);
         }
-        p.text(text, Iones.getProfile().MARGIN, Iones.getProfile().MARGIN);
+        p.text(text, profile.MARGIN, profile.MARGIN);
         p.popMatrix();
     }
 }

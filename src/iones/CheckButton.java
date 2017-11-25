@@ -20,7 +20,7 @@ public class CheckButton extends Button {
         pg.pushMatrix();
         pg.translate(x+w/4, y+h/4);
         if(checked){
-            pg.fill(colors.get("text"));
+            pg.fill(cstroke);
             pg.rect(0, 0, w/2, h/2);
         }
         pg.popMatrix();

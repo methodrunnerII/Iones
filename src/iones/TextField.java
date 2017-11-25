@@ -61,12 +61,12 @@ public class TextField extends Button {
         super.display(p);
         p.pushMatrix();
         p.translate(x, y);
-        p.fill(colors.get("text"));
+        p.fill(ctext);
         p.textAlign(PConstants.LEFT, PConstants.CENTER);
-        p.text(fieldName + value, Iones.getProfile().MARGIN, Iones.getProfile().MARGIN);
+        p.text(fieldName + value, profile.MARGIN, profile.MARGIN);
 
         if (Iones.getCurrent().getTextfield() == this) {
-            p.stroke(colors.get("text"));
+            p.stroke(ctext);
             int lx = hov.ceil(hov.textWidth(fieldName + value.substring(0, indicator)));
             p.line(lx, 2, lx, 10);
         }

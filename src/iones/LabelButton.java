@@ -26,7 +26,7 @@ public class LabelButton extends Button {
         super.display(pg);
         pg.pushMatrix();
         pg.translate(x, y);
-        pg.fill(colors.get("text"));
+        pg.fill(ctext);
         pg.textAlign(PConstants.CENTER, PConstants.CENTER);
         pg.text(name, w / 2, h / 2);
         pg.popMatrix();

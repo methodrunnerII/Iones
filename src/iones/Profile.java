@@ -10,57 +10,47 @@ public class Profile {
         hov = p;
     }
 
-    final static int MENU = 0;
-    final static int BUTTON = 1;
+    public static final int STROKE = 0;
+    public static final int FILL = 1;
+    public static final int TEXT = 2;
 
-    public int MENUSTROKE;
-    public int MENUFILL;
+    public static final int REGULAR = 0;
+    public static final int HOVER = 1;
+    public static final int CLICK = 2;
 
-    public int BUTTONFILL;
-    public int BUTTONSTROKE;
-    public int BUTTONTEXT;
-    public int BUTTONHOVER;
-    public int BUTTONCLICK;
-
-    public int MENUBLUE;
-    public int CLEAR;
+    public static final int ERROR = 0xff00ffff;
+    public static final int CLEAR = 0xffffff00;
 
     public int MARGIN;
 
-    Profile() {
-        MENUSTROKE = hov.color(0, 0, 0.4f);
-        MENUFILL = hov.color(0, 0, 0.2f);
+    int[][] colors;
 
-        BUTTONFILL = hov.color(0, 0, 0.3f);
-        BUTTONSTROKE = hov.color(0, 0, 0.15f);
-        BUTTONTEXT = hov.color(0, 0, 0.8f);
-        BUTTONHOVER = hov.color(0, 0, 0.5f);
-        BUTTONCLICK = hov.color(0.15f, 1, 1);
-
-        MENUBLUE = hov.color(0.6f, 0.4f, 0.3f);
-
-        CLEAR = hov.color(0, 0, 0, 0.01f);
+    Profile(int stroke, int fill, int text) {
+        colors = new int[3][3];
+        colors[STROKE][0] = stroke;
+        colors[FILL][0] = fill;
+        colors[TEXT][0] = text;
 
         MARGIN = 2;
     }
 
-    void getButtonColors(IntDict c, boolean mouseOver, boolean clicked) {
-        c.set("text", BUTTONTEXT);
-        c.set("stroke", BUTTONSTROKE);
-        if (mouseOver) {
-            if (clicked) {
-                c.set("fill", BUTTONCLICK);
-            } else {
-                c.set("fill", BUTTONHOVER);
-            }
-        } else {
-            c.set("fill", BUTTONFILL);
+    public int getColor(int part, int state){
+        if(part < 0 || part >= colors.length || state < 0 || state >= colors[0].length){
+            return ERROR;
         }
+        return colors[part][state];
     }
 
-    void getMenuColors(IntDict c){
-        c.set("fill", MENUFILL);
-        c.set("stroke", MENUSTROKE);
-        c.set("text", BUTTONTEXT);
+    public int getColor(int part){
+        return getColor(part, 0);
+    }
+
+    public void setColor(int part, int state, int c){
+        if(part < 0 || part >= colors.length || state < 0 || state >= colors[0].length){
+            PApplet.println("Error: couldn't set profile color, out of bounds");
+            return;
+        }
+
+        colors[part][state] = c;
     }
 }

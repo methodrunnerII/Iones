@@ -56,7 +56,7 @@ public class TabbedMenu extends Menu{
     }
 
     public void display(PGraphics pg) {
-        Iones.getProfile().getMenuColors(colors);
+        selectColors();
         pg.pushMatrix();
         pg.translate(x, y);
 

@@ -25,14 +25,14 @@ public class MenuObject {
     int sx;  //Screen coordinates of the object
     int sy;
 
-    IntDict colors;
-
     Profile profile;
+    int cfill;
+    int cstroke;
+    int ctext;
 
     public MenuObject(int tx, int ty, int tw, int th) {
-        profile = new Profile();
+        profile = DefaultProfile.menu;
         children = new ArrayList<MenuObject>();
-        colors = new IntDict(3);
 
         x = tx;
         y = ty;
@@ -182,11 +182,33 @@ public class MenuObject {
         sy = PApplet.round(hov.screenY(0, 0));
     }
 
+    public void setProfile(Profile p){
+        profile = p;
+    }
+
+    void selectColors(){
+        cfill = profile.getColor(Profile.FILL);
+        cstroke = profile.getColor(Profile.STROKE);
+        ctext = profile.getColor(Profile.TEXT);
+
+        if(Iones.getCurrent().mousedOver == this){
+            cfill = profile.getColor(Profile.FILL, Profile.HOVER);
+            cstroke = profile.getColor(Profile.STROKE, Profile.HOVER);
+            ctext = profile.getColor(Profile.TEXT, Profile.HOVER);
+        }
+        if(Iones.getCurrent().clickedLeft == this){
+            cfill = profile.getColor(Profile.FILL, Profile.CLICK);
+            cstroke = profile.getColor(Profile.STROKE, Profile.CLICK);
+            ctext = profile.getColor(Profile.TEXT, Profile.CLICK);
+        }
+    }
+
     void display() {
         display(hov.g);
     }
 
     void display(PGraphics pg) {
+        selectColors();
         pg.pushMatrix();
         pg.translate(x, y);
         for (int i = 0; i < children.size(); i++) {

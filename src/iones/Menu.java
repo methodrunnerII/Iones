@@ -14,6 +14,7 @@ public class Menu extends MenuObject {
 
     public Menu(int tx, int ty, int tw, int th) {
         super(tx, ty, tw, th);
+        profile = DefaultProfile.menu;
         done = false;
         isVolatile = false;
     }
@@ -33,14 +34,14 @@ public class Menu extends MenuObject {
     }
 
     public void display(PGraphics pg) {
-        Iones.getProfile().getMenuColors(colors);
+        selectColors();
         pg.pushMatrix();
         pg.translate(x, y);
         if (background != null) {
             pg.image(background, 0, 0);
         } else {
-            pg.stroke(colors.get("stroke"));
-            pg.fill(colors.get("fill"));
+            pg.stroke(cstroke);
+            pg.fill(cfill);
             pg.rectMode(PApplet.CORNER);
             pg.rect(0, 0, w, h);
         }

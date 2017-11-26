@@ -21,15 +21,10 @@ public class MenuBuffer {
         return m;
     }
 
-    MenuObject getClicked(){
-        MenuObject m = null;
+    void clickEval(){
         for(int i = menus.size()-1; i >= 0; i--){
-            m = menus.get(i).getClicked();
-            if(m != null) {
-                break;
-            }
+            menus.get(i).clickEval();
         }
-        return m;
     }
 
     public void debugStuff(){

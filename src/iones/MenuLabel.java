@@ -3,18 +3,29 @@ package iones;
 import processing.core.PGraphics;
 import processing.core.PImage;
 
-class MenuLabel extends MenuObject {
+public class MenuLabel extends MenuObject {
     String text;
     PImage image;
 
-    MenuLabel(String tt, PImage ti, int tx, int ty) {
-        super(tx, ty, ti.width, ti.height);
+    public MenuLabel(String tt, PImage ti, int tx, int ty) {
+        super(tx, ty, 0, 0);
+        resize(ti.width, ti.height);
         text = tt;
         image = ti;
     }
 
-    public void setImage(PImage i) {
-        image = i;
+    public MenuLabel(String tt, int x, int y, int w, int h) {
+        super(x, y, w, h);
+        text = tt;
+    }
+
+    public void setImage(PImage ti) {
+        image = ti;
+        resize(ti.width, ti.height);
+    }
+
+    public void setText(String s){
+        text = s;
     }
 
     public void display() {

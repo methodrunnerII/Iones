@@ -25,6 +25,10 @@ public class Iones {
         debugMode = false;
     }
 
+    public static void clickEval(){
+        buffer.clickEval();
+    }
+
     public static void getMouseOver(){
         MenuObject m = buffer.getMouseOver();
         if(m != null){

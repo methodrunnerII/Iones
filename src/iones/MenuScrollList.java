@@ -20,7 +20,6 @@ public class MenuScrollList extends MenuList {
         super(tx, ty, tw, th);
         scrollButtonSize = 8;
         scrollButton = new LabelButton("", w - scrollButtonSize, scrollButtonSize / 2, scrollButtonSize, scrollButtonSize);
-        margin = 2;
         updateLength();
         displaySpace = hov.createGraphics(w, h, PApplet.P2D);
         ((PGraphicsOpenGL) displaySpace).textureSampling(2);
@@ -34,12 +33,11 @@ public class MenuScrollList extends MenuList {
             scrollButton.y = PApplet.constrain(scrollButton.y, scrollButton.h / 2, h - scrollButton.h / 2);
         }
         offset = PApplet.map(scrollButton.y, scrollButton.h / 2, h - scrollButton.h / 2, 0, PApplet.max(l - h, 0));
-        super.eval();
     }
 
     public void addChild(MenuObject o) {
         super.addChild(o);
-        o.resize(o.w - scrollButton.w - 2 * margin, o.h);
+        o.resize(w - scrollButton.w - 2 * profile.MARGIN, o.h);
     }
 
     public int getWidth() {

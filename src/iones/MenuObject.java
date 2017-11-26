@@ -42,11 +42,11 @@ public class MenuObject {
         ny = y + h + profile.MARGIN;
     }
 
-    void eval(){
-        for(MenuObject m : children){
-            m.eval();
-        }
-    }
+//    void eval(){
+//        for(MenuObject m : children){
+//            m.eval();
+//        }
+//    }
 
     void debugStuff(){
         hov.pushMatrix();
@@ -84,34 +84,15 @@ public class MenuObject {
         return m;
     }
 
+    void clickEval(){
+        for(int i = children.size()-1; i>= 0; i--){
+            children.get(i).clickEval();
+        }
+    }
+
     boolean isMouseOver() {
         return hov.mouseX == PApplet.constrain(hov.mouseX, hov.screenX(0, 0), hov.screenX(w, 0)) &&
                 hov.mouseY == PApplet.constrain(hov.mouseY, hov.screenY(0, 0), hov.screenY(0, h));
-    }
-
-    MenuObject getClicked() {
-        MenuObject m = null;
-        hov.pushMatrix();
-        hov.translate(x, y);
-        if (isMouseOver()) {
-
-            // Check all child objects first
-            for (MenuObject mo : children) {
-                m = mo.getClicked();
-
-                if (m != null) {
-                    break;
-                }
-            }
-
-            //If no child objects were hit, check if it is on the current object
-            if (m == null && isMouseOver()) {
-                m = this;
-            }
-        }
-        hov.popMatrix();
-
-        return m;
     }
 
     void onClickLeft(){

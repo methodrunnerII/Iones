@@ -1,5 +1,6 @@
 package iones;
 
+import processing.core.PApplet;
 import processing.core.PGraphics;
 
 import java.util.ArrayList;
@@ -17,8 +18,8 @@ public class TabbedMenu extends Menu{
         currentMenu = null;
     }
 
-    public void setMenu(Menu m){
-        if(currentMenu != null){
+    void selectMenu(Menu m){
+        if(currentMenu != null && menus.contains(m)){
             children.remove(currentMenu);
         }
         currentMenu = m;
@@ -33,7 +34,7 @@ public class TabbedMenu extends Menu{
         menus.add(m);
         m.move(m.x, tabs.ny);
         if(menus.size() == 1){
-            setMenu(m);
+            selectMenu(m);
         }
         updateTabs();
     }
@@ -45,12 +46,15 @@ public class TabbedMenu extends Menu{
         }
     }
 
-    public void onClickLeft(){
-        super.onClickLeft();
+    public void evalClick(){
+        MenuObject m = Iones.current.getClickedLeft();
 
-        for(MenuObject m : tabs.children){
-            if(Iones.getCurrent().clickedLeft == m){
-                setMenu((Menu) m);
+        for(int i = 0; i < menus.size(); i++){
+            PApplet.println("FUCK");
+            if(m == tabs.children.get(i)){
+                selectMenu(menus.get(i));
+                PApplet.println(i);
+                return;
             }
         }
     }

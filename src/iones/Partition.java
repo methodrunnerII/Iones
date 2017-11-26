@@ -26,7 +26,7 @@ public class Partition extends MenuObject {
         if(children.size() == 1){
             MenuObject m = children.get(0);
             m.move(profile.MARGIN, profile.MARGIN);
-            m.resize(m.getW()-2*profile.MARGIN, m.getH()-2*profile.MARGIN);
+            m.resize(getW()-2*profile.MARGIN, getH()-2*profile.MARGIN);
         } else {
             int[] x = new int[children.size()];
             int[] y = new int[children.size()];
@@ -87,7 +87,7 @@ public class Partition extends MenuObject {
             } else {
                 c = ((float) i)/getH();
             }
-            splitCoords.append(i);
+            splitCoords.append(c);
         }
 
         updateChildren();

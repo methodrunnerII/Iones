@@ -1,7 +1,6 @@
 package iones;
 
 import processing.core.PGraphics;
-import processing.data.IntDict;
 
 public class Button extends MenuObject {
 
@@ -10,7 +9,7 @@ public class Button extends MenuObject {
         profile = DefaultProfile.button;
     }
 
-    void display(PGraphics pg) {
+    public void display(PGraphics pg) {
         selectColors();
         pg.pushMatrix();
         pg.translate(x, y);
@@ -18,5 +17,9 @@ public class Button extends MenuObject {
         pg.stroke(cstroke);
         pg.rect(0, 0, w, h);
         pg.popMatrix();
+    }
+
+    public void display(){
+        display(hov.g);
     }
 }

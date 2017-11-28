@@ -46,14 +46,12 @@ public class TabbedMenu extends Menu{
         }
     }
 
-    public void evalClick(){
+    public void clickEval(){
         MenuObject m = Iones.current.getClickedLeft();
 
         for(int i = 0; i < menus.size(); i++){
-            PApplet.println("FUCK");
             if(m == tabs.children.get(i)){
                 selectMenu(menus.get(i));
-                PApplet.println(i);
                 return;
             }
         }

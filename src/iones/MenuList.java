@@ -4,12 +4,18 @@ import processing.core.PGraphics;
 
 public class MenuList extends MenuObject {
     int margin;
-    public int l;
+    public int l; //length of list, not of display window!
 
     public MenuList(int tx, int ty, int tw, int th) {
         super(tx, ty, tw, th);
         margin = 2;
-        updateLength();
+    }
+
+    public void resize(int w, int h){
+        super.resize(w, h);
+        for(MenuObject m : children){
+            m.resize(w, m.getH());
+        }
     }
 
     public void addChild(MenuObject o) {
@@ -41,10 +47,6 @@ public class MenuList extends MenuObject {
         }
         output += (n + 1) * margin;
         return output;
-    }
-
-    public void display() {
-        display(hov.g);
     }
 
     public void display(PGraphics p) {

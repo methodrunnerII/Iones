@@ -27,6 +27,12 @@ public class MenuBuffer {
         }
     }
 
+    void holdEval(){
+        for(int i = menus.size()-1; i >= 0; i--){
+            menus.get(i).holdEval();
+        }
+    }
+
     public void debugStuff(){
         for(Menu m : menus){
             m.debugStuff();

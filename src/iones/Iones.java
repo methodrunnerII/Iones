@@ -10,9 +10,11 @@ public class Iones {
     static MenuBuffer buffer;
     static Current current;
 
+    static float scale = 1;
+
     static boolean debugMode;
 
-    public static void initialize(PApplet p){
+    public static void initialize(PApplet p, float scale){
         p.colorMode(PConstants.HSB, 1);
         Iones.hov = p;
         MenuObject.setPApplet(p);
@@ -23,17 +25,26 @@ public class Iones {
         current = new Current();
 
         debugMode = false;
+
+        Iones.scale = scale;
     }
 
     public static void clickEval(){
         buffer.clickEval();
     }
 
+    public static void holdEval(){
+        buffer.holdEval();
+    }
+
     public static void getMouseOver(){
+        hov.pushMatrix();
+        hov.scale(scale);
         MenuObject m = buffer.getMouseOver();
         if(m != null){
             current.setMousedOver(m);
         }
+        hov.popMatrix();
     }
 
     public static void mousePressed(int type){
@@ -45,12 +56,14 @@ public class Iones {
         if(m != null){
             if(type == PConstants.LEFT){
                 current.setClickedLeft(m);
+                current.setHeldLeft(m);
                 if(m instanceof TextField){
                     current.setTextfield((TextField) m);
                 }
                 m.onClickLeft();
             } else if(type == PConstants.RIGHT){
                 current.setClickedRight(m);
+                current.setHeldRight(m);
                 m.onClickRight();
             }
         }
@@ -93,15 +106,16 @@ public class Iones {
     }
 
     public static void display(PGraphics pg){
+        pg.pushMatrix();
+        pg.scale(scale);
         for(Menu m : buffer.menus){
             m.display(pg);
         }
+        pg.popMatrix();
     }
 
     public static void display(){
-        for(Menu m : buffer.menus){
-            m.display();
-        }
+        display(hov.g);
     }
 
     public static void displayText(String s, int x, int y, PGraphics pg){
@@ -110,6 +124,14 @@ public class Iones {
 
     public static void setDebugMode(Boolean b){
         debugMode = b;
+    }
+
+    public static float getScale() {
+        return scale;
+    }
+
+    public static void setScale(float scale) {
+        Iones.scale = scale;
     }
 }
 

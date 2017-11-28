@@ -90,6 +90,12 @@ public class MenuObject {
         }
     }
 
+    void holdEval(){
+        for(int i = children.size()-1; i>= 0; i--){
+            children.get(i).holdEval();
+        }
+    }
+
     boolean isMouseOver() {
         return hov.mouseX == PApplet.constrain(hov.mouseX, hov.screenX(0, 0), hov.screenX(w, 0)) &&
                 hov.mouseY == PApplet.constrain(hov.mouseY, hov.screenY(0, 0), hov.screenY(0, h));

@@ -1,6 +1,7 @@
 package iones;
 
 import processing.core.PApplet;
+import processing.core.PGraphics;
 import processing.data.IntDict;
 
 public class Profile {
@@ -24,6 +25,9 @@ public class Profile {
     public int MARGIN;
 
     int[][] colors;
+
+    int COLORMODE;
+    int COLORMODELIMIT;
 
     Profile(int stroke, int fill, int text) {
         colors = new int[3][3];

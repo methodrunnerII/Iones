@@ -10,6 +10,11 @@ public class Viewport extends MenuObject {
 
     public Viewport(int x, int y, int w, int h){
         super(x, y, w, h);
+        initPG(w, h);
+        offset = new PVector(0, 0);
+    }
+
+    void initPG(int w, int h){
         pg = Iones.getPApplet().createGraphics(Iones.getPApplet().max(w, 1), Iones.getPApplet().max(h, 1));
     }
 
@@ -17,8 +22,11 @@ public class Viewport extends MenuObject {
         super.holdEval();
         PApplet a = Iones.getPApplet();
         MenuObject m = Iones.getCurrent().getHeldRight();
-        if(m != null && m.isChildOf(this)){
-            offset.add(a.mouseX-a.pmouseX, a.mouseY-a.pmouseY);
+
+        if(m != null){
+            if(m == this || m.isChildOf(this)){
+                offset.add((a.mouseX-a.pmouseX)/Iones.scale, (a.mouseY-a.pmouseY)/Iones.scale);
+            }
         }
     }
 
@@ -27,9 +35,13 @@ public class Viewport extends MenuObject {
         p.pushMatrix();
         p.translate(x, y);
         pg.beginDraw();
+        pg.clear();
+        pg.pushMatrix();
+        pg.translate(offset.x, offset.y);
         for(int i = 0; i < children.size(); i++){
             children.get(i).display(pg);
         }
+        pg.popMatrix();
         pg.endDraw();
         p.image(pg, 0, 0);
         p.popMatrix();
@@ -37,6 +49,6 @@ public class Viewport extends MenuObject {
 
     public void resize(int w, int h){
         super.resize(w, h);
-        pg.resize(w, h);
+        initPG(w, h);
     }
 }

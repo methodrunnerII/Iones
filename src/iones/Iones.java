@@ -35,6 +35,14 @@ public class Iones {
 
     public static void holdEval(){
         buffer.holdEval();
+        MenuObject l = getCurrent().getHeldLeft();
+        if(l != null){
+            l.onHoldLeft();
+        }
+        MenuObject r = getCurrent().getHeldRight();
+        if(r != null){
+            r.onHoldRight();
+        }
     }
 
     public static void getMouseOver(){

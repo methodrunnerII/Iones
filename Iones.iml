@@ -7,15 +7,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="file://$MODULE_DIR$/../../Libraries/Processing" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-        <jarDirectory url="file://$MODULE_DIR$/../../Libraries/Processing" recursive="false" />
-      </library>
-    </orderEntry>
+    <orderEntry type="library" exported="" name="core" level="project" />
+    <orderEntry type="library" exported="" name="Processing" level="project" />
   </component>
 </module>

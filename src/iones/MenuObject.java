@@ -42,12 +42,6 @@ public class MenuObject {
         ny = y + h + profile.MARGIN;
     }
 
-//    void eval(){
-//        for(MenuObject m : children){
-//            m.eval();
-//        }
-//    }
-
     void debugStuff(){
         hov.pushMatrix();
         hov.translate(x, y);

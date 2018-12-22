@@ -55,7 +55,7 @@ public class Iones {
         hov.popMatrix();
     }
 
-    static void mousePressed(int type){
+    public static void mousePressed(int type){
         current.setClickedLeft(null);
         current.setClickedRight(null);
         current.setTextfield(null);

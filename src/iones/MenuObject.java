@@ -129,6 +129,17 @@ public class MenuObject {
         }
     }
 
+    public void expandToFill() {
+        if(parent == null){
+            return;
+        }
+
+        move(parent.getProfile().MARGIN, parent.getProfile().MARGIN);
+        int w = parent.w - 2*parent.getProfile().MARGIN;
+        int h = parent.h - 2*parent.getProfile().MARGIN;
+        resize(w, h);
+    }
+
     public void resizeToFit() {
         int maxX = 0;
         int maxY = 0;

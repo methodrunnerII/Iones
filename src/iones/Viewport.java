@@ -8,9 +8,9 @@ public class Viewport extends MenuObject {
     PGraphics pg;
     PVector offset;
 
-    Viewport(int x, int y, int w, int h){
+    public Viewport(int x, int y, int w, int h){
         super(x, y, w, h);
-        pg = Iones.getPApplet().createGraphics(w, h);
+        pg = Iones.getPApplet().createGraphics(Iones.getPApplet().max(w, 1), Iones.getPApplet().max(h, 1));
     }
 
     void holdEval(){

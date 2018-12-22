@@ -13,7 +13,9 @@ public class Viewport extends MenuObject {
         pg = Iones.getPApplet().createGraphics(w, h);
     }
 
-    void evalDrag(PApplet a){
+    void holdEval(){
+        super.holdEval();
+        PApplet a = Iones.getPApplet();
         MenuObject m = Iones.getCurrent().getHeldRight();
         if(m != null && m.isChildOf(this)){
             offset.add(a.mouseX-a.pmouseX, a.mouseY-a.pmouseY);

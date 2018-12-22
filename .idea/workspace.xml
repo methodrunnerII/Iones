@@ -7,13 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="179a5ddf-cfd3-43b4-afa6-5e212f094215" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Processing.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/core.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Iones_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/Iones_jar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Iones.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Iones.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Iones_jar/Iones.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Iones_jar/Iones.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/iones/Iones.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/iones/Iones.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/iones/MenuObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/iones/MenuObject.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -26,11 +20,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Iones.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Iones.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/iones/Iones.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="585">
-              <caret line="43" column="28" selection-start-line="43" selection-start-column="28" selection-end-line="43" selection-end-column="28" />
+            <state relative-caret-position="510">
+              <caret line="47" column="38" lean-forward="true" selection-start-line="47" selection-start-column="38" selection-end-line="47" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -66,11 +60,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TabbedMenu.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/iones/TabbedMenu.java">
+      <file leaf-file-name="MenuScrollList.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/iones/MenuScrollList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="690">
-              <caret line="51" column="46" selection-start-line="51" selection-start-column="46" selection-end-line="51" selection-end-column="46" />
+            <state relative-caret-position="675">
+              <caret line="49" column="18" selection-start-line="49" selection-start-column="18" selection-end-line="49" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Slider.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/iones/Slider.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="442">
+              <caret line="86" column="61" lean-forward="true" selection-start-line="86" selection-start-column="61" selection-end-line="86" selection-end-column="61" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -94,7 +97,7 @@
       <file leaf-file-name="MenuList.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/iones/MenuList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
+            <state relative-caret-position="348">
               <caret line="32" column="16" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="16" />
               <folding>
                 <element signature="e#707#708#0" expanded="true" />
@@ -104,23 +107,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MenuObject.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MenuObject.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/iones/MenuObject.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
-              <caret line="43" selection-start-line="43" selection-end-line="43" />
+            <state relative-caret-position="426">
+              <caret line="241" column="25" selection-start-line="241" selection-start-column="25" selection-end-line="241" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LabelButton.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/iones/LabelButton.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
             </state>
           </provider>
         </entry>
@@ -158,6 +152,8 @@
       <find>.set</find>
       <find>scrollbar.</find>
       <find>setname</find>
+      <find>holdev</find>
+      <find>holdeval</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -204,8 +200,8 @@
         <option value="$PROJECT_DIR$/src/iones/MenuScrollList.java" />
         <option value="$PROJECT_DIR$/src/iones/Slider.java" />
         <option value="$PROJECT_DIR$/src/iones/LabelButton.java" />
-        <option value="$PROJECT_DIR$/src/iones/MenuObject.java" />
         <option value="$PROJECT_DIR$/src/iones/Iones.java" />
+        <option value="$PROJECT_DIR$/src/iones/MenuObject.java" />
       </list>
     </option>
   </component>
@@ -394,6 +390,7 @@
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="1" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1296875" />
+      <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.32876712" />
       <window_info anchor="right" id="Structure" order="3" side_tool="true" visible="true" weight="0.13958333" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
@@ -406,7 +403,6 @@
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32954547" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -508,12 +504,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="465">
           <caret line="35" column="115" selection-start-line="35" selection-start-column="115" selection-end-line="35" selection-end-column="115" />
-          <folding>
-            <element signature="e#2076#2077#0" expanded="true" />
-            <element signature="e#2148#2149#0" expanded="true" />
-            <element signature="e#2743#2744#0" expanded="true" />
-            <element signature="e#2773#2774#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -565,12 +555,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="975">
           <caret line="75" column="29" selection-start-line="75" selection-start-column="29" selection-end-line="75" selection-end-column="29" />
-          <folding>
-            <element signature="e#2076#2077#0" expanded="true" />
-            <element signature="e#2148#2149#0" expanded="true" />
-            <element signature="e#2743#2744#0" expanded="true" />
-            <element signature="e#2773#2774#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -687,29 +671,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/iones/MenuScrollList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="49" column="29" selection-start-line="49" selection-start-column="29" selection-end-line="49" selection-end-column="29" />
-          <folding>
-            <element signature="e#2076#2077#0" expanded="true" />
-            <element signature="e#2148#2149#0" expanded="true" />
-            <element signature="e#2743#2744#0" expanded="true" />
-            <element signature="e#2773#2774#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/iones/Slider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1395">
-          <caret line="96" column="16" selection-start-line="96" selection-start-column="16" selection-end-line="96" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/iones/TabbedMenu.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="690">
@@ -745,9 +706,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/iones/MenuBuffer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="30" column="36" selection-start-line="30" selection-start-column="36" selection-end-line="30" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/iones/MenuList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
+        <state relative-caret-position="348">
           <caret line="32" column="16" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="16" />
           <folding>
             <element signature="e#707#708#0" expanded="true" />
@@ -756,20 +724,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/iones/MenuObject.java">
+    <entry file="file://$PROJECT_DIR$/src/iones/MenuScrollList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="43" selection-start-line="43" selection-end-line="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="675">
+          <caret line="49" column="18" selection-start-line="49" selection-start-column="18" selection-end-line="49" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/iones/MenuBuffer.java">
+    <entry file="file://$PROJECT_DIR$/src/iones/Slider.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="30" column="36" selection-start-line="30" selection-start-column="36" selection-end-line="30" selection-end-column="36" />
+        <state relative-caret-position="442">
+          <caret line="86" column="61" lean-forward="true" selection-start-line="86" selection-start-column="61" selection-end-line="86" selection-end-column="61" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -793,8 +761,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/iones/Iones.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="43" column="28" selection-start-line="43" selection-start-column="28" selection-end-line="43" selection-end-column="28" />
+        <state relative-caret-position="510">
+          <caret line="47" column="38" lean-forward="true" selection-start-line="47" selection-start-column="38" selection-end-line="47" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/iones/MenuObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="426">
+          <caret line="241" column="25" selection-start-line="241" selection-start-column="25" selection-end-line="241" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

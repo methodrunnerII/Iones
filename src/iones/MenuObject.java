@@ -231,4 +231,15 @@ public class MenuObject {
     public void setParent(MenuObject parent) {
         this.parent = parent;
     }
+
+    public boolean isChildOf(MenuObject m){
+        MenuObject p = parent;
+        while(p != null){
+            if(p == m){
+                return true;
+            }
+            p = p.getParent();
+            return false;
+        }
+    }
 }

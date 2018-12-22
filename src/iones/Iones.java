@@ -55,7 +55,7 @@ public class Iones {
         hov.popMatrix();
     }
 
-    public static void mousePressed(int type){
+    static void mousePressed(int type){
         current.setClickedLeft(null);
         current.setClickedRight(null);
         current.setTextfield(null);
@@ -103,6 +103,10 @@ public class Iones {
 
         current.setClickedLeft(null);
         current.setClickedRight(null);
+    }
+
+    static PApplet getPApplet(){
+        return hov;
     }
 
     public static MenuBuffer getBuffer(){

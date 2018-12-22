@@ -169,7 +169,7 @@ public class MenuObject {
     }
     public Profile getProfile(){return profile;}
 
-    void selectColors(){
+    public void selectColors(){
         cfill = profile.getColor(Profile.FILL);
         cstroke = profile.getColor(Profile.STROKE);
         ctext = profile.getColor(Profile.TEXT);
@@ -239,7 +239,7 @@ public class MenuObject {
                 return true;
             }
             p = p.getParent();
-            return false;
         }
+        return false;
     }
 }

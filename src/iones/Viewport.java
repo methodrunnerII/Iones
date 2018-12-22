@@ -34,4 +34,9 @@ public class Viewport extends MenuObject {
         p.image(pg, 0, 0);
         p.popMatrix();
     }
+
+    public void resize(int w, int h){
+        super.resize(w, h);
+        pg.resize(w, h);
+    }
 }
